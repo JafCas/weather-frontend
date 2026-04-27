@@ -1,5 +1,43 @@
-# Vue 3 + TypeScript + Vite
+# Weather Dashboard - Frontend
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is the frontend for the Weather Dashboard project, built with **Vue 3**, **TypeScript**, and **Vite**. It provides a real-time weather monitoring interface with live updates and short-term forecasts.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+- **Real-time Weather Data**: Displays current temperature, conditions, and location-specific details.
+- **8-Hour Forecast**: Visualize upcoming weather trends at a glance.
+- **Live Updates**: Integrates with a NestJS backend via WebSockets for instantaneous data synchronization.
+- **Responsive Design**: Modern and clean interface that works across various devices.
+
+![App Screenshot](./public/screenshots/app-screenshot.png)
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+1. Clone the repository and navigate to the `frontend` directory:
+   ```bash
+   cd weather/frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Project
+To start the development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173/`.
+
+**Note**: Ensure the [backend](../backend/README.md) is running to receive real-time weather updates.
+
+## Scripts
+- `npm run dev`: Starts the development server using Vite.
+- `npm run build`: Compiles and minifies for production.
+- `npm run preview`: Locally preview the production build.
+- `npm run test`: Runs unit tests using Vitest.
+
