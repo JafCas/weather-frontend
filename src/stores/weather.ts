@@ -22,8 +22,13 @@ export const useWeatherStore = defineStore('weather', {
   actions: {
     connect() {
       if (this.socket) return;
-      
-      this.socket = new WebSocket('ws://localhost:8080');
+      const wsUrl = import.meta.env.VITE_WEBSOCKET_URL as string | undefined;
+      if (!wsUrl) {
+        console.error('Missing VITE_WEBSOCKET_URL environment variable');
+        return;
+      }
+
+      this.socket = new WebSocket(wsUrl);
       
       this.socket.onopen = () => {
         this.isConnected = true;

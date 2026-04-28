@@ -25,6 +25,10 @@ This is the frontend for the Weather Dashboard project, built with **Vue 3**, **
    ```bash
    npm install
    ```
+3. Create a `.env` file with your backend WebSocket URL:
+   ```bash
+   VITE_WEBSOCKET_URL=ws://localhost:8080
+   ```
 
 ### Running the Project
 To start the development server:
