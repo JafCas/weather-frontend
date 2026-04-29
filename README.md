@@ -25,9 +25,23 @@ This is the frontend for the Weather Dashboard project, built with **Vue 3**, **
    ```bash
    npm install
    ```
-3. Create a `.env` file with your backend WebSocket URL:
+3. Create a `.env` file with your backend URL:
    ```bash
+   # Option 1 (Cloud Run / HTTP polling)
+   VITE_WEATHER_API_URL=https://weather-service-287683122914.us-central1.run.app/weather
+   VITE_WEATHER_API_AUTH_TOKEN=your_identity_token
+
+   # Option 2 (local WebSocket)
    VITE_WEBSOCKET_URL=ws://localhost:8080
+   ```
+
+   Optional overrides:
+   ```bash
+   # Provide the full Authorization header value, e.g. "Bearer <token>"
+   VITE_WEATHER_API_AUTH_HEADER=Bearer your_identity_token
+
+   # Polling interval in milliseconds (default: 60000)
+   VITE_WEATHER_POLL_INTERVAL_MS=60000
    ```
 
 ### Running the Project
