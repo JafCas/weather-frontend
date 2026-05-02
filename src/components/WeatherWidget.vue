@@ -2,9 +2,11 @@
 import { computed } from 'vue';
 import { useWeatherStore } from '../stores/weather';
 import { getWeatherIcon } from '../utils/weather';
+import { useI18n } from 'vue-i18n';
 import * as icons from 'lucide-vue-next';
 
 const weatherStore = useWeatherStore();
+const { t } = useI18n();
 
 const weather = computed(() => weatherStore.weather?.current);
 const IconComponent = computed(() => {
@@ -17,7 +19,7 @@ const IconComponent = computed(() => {
 <template>
   <div class="weather-widget glass-panel">
     <div class="widget-header">
-      <h2>Benito Juarez, MX</h2>
+      <h2>{{ t('widget.city') }}</h2>
       <div v-if="weatherStore.isConnected" class="status-indicator online"></div>
       <div v-else class="status-indicator offline"></div>
     </div>
@@ -31,7 +33,7 @@ const IconComponent = computed(() => {
     
     <div v-else class="widget-loading">
       <component :is="IconComponent" :size="48" class="loading-spinner" />
-      <p>Loading real-time data...</p>
+      <p>{{ t('widget.loading') }}</p>
     </div>
   </div>
 </template>

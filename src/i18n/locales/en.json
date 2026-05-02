@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "The weather today"
+  },
+  "widget": {
+    "city": "Benito Juarez, MX",
+    "loading": "Loading real-time data..."
+  },
+  "forecast": {
+    "title": "8-Hour Forecast",
+    "waiting": "Waiting for data..."
+  },
+  "language": {
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  }
+}

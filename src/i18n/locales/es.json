@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "El clima de hoy"
+  },
+  "widget": {
+    "city": "Benito Juárez, MX",
+    "loading": "Cargando datos en tiempo real..."
+  },
+  "forecast": {
+    "title": "Pronóstico de 8 horas",
+    "waiting": "Esperando datos..."
+  },
+  "language": {
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés"
+  }
+}
