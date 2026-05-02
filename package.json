@@ -1,12 +1,24 @@
 {
-  "name": "frontend",
-  "private": true,
-  "version": "1.0.0",
+  "name": "jca-weather-frontend",
+  "version": "1.0.1",
   "type": "module",
+  "main": "./dist/weather-widget.umd.cjs",
+  "module": "./dist/weather-widget.js",
+  "exports": {
+    ".": {
+      "import": "./dist/weather-widget.js",
+      "require": "./dist/weather-widget.umd.cjs"
+    },
+    "./style.css": "./dist/weather-widget.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "npm run backend-select && vite --host",
     "backend-select": "node scripts/switch-backend.mjs",
     "build": "vue-tsc -b && vite build",
+    "re-build": "rm -rf node_modules dist && npm install && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
