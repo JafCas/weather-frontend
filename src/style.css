@@ -9,13 +9,13 @@
   --accent: #6ee7b7;
 }
 
-* {
+.weather-app-root *, .weather-widget-root * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-body {
+.weather-app-root {
+  margin: 0;
+  padding: 0;
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -23,6 +23,11 @@ body {
   animation: gradientBG 15s ease infinite;
   color: var(--text-primary);
   overflow-x: hidden;
+}
+
+.weather-widget-root {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
 }
 
 @keyframes gradientBG {
@@ -68,26 +73,27 @@ body {
   transform: scale(1.02);
 }
 
-h1, h2, h3 {
+.weather-app-root h1, .weather-app-root h2, .weather-app-root h3,
+.weather-widget-root h1, .weather-widget-root h2, .weather-widget-root h3 {
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-p {
+.weather-app-root p, .weather-widget-root p {
   color: var(--text-secondary);
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
+.weather-app-root ::-webkit-scrollbar, .weather-widget-root ::-webkit-scrollbar {
   width: 6px;
 }
-::-webkit-scrollbar-track {
+.weather-app-root ::-webkit-scrollbar-track, .weather-widget-root ::-webkit-scrollbar-track {
   background: transparent;
 }
-::-webkit-scrollbar-thumb {
+.weather-app-root ::-webkit-scrollbar-thumb, .weather-widget-root ::-webkit-scrollbar-thumb {
   background: var(--glass-border);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
+.weather-app-root ::-webkit-scrollbar-thumb:hover, .weather-widget-root ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
 }

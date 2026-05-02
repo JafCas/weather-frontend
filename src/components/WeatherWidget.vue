@@ -17,7 +17,7 @@ const IconComponent = computed(() => {
 </script>
 
 <template>
-  <div class="weather-widget glass-panel">
+  <div class="weather-widget-root weather-widget glass-panel">
     <div class="widget-header">
       <h2>{{ t('widget.city') }}</h2>
       <div v-if="weatherStore.isConnected" class="status-indicator online"></div>
