@@ -18,6 +18,7 @@
     "dev": "npm run backend-select && vite --host",
     "backend-select": "node scripts/switch-backend.mjs",
     "build": "vue-tsc -b && vite build",
+    "re-build": "rm -rf node_modules dist && npm install && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
