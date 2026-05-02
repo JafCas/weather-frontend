@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
-import { useI18n } from "vue-i18n";
 import { useWeatherStore } from "./stores/weather";
 import WeatherWidget from "./components/WeatherWidget.vue";
 import ForecastList from "./components/ForecastList.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 const weatherStore = useWeatherStore();
-const { t, locale } = useI18n();
-const languages = [
-  { code: 'en', key: 'language.en' },
-  { code: 'es', key: 'language.es' },
-  { code: 'fr', key: 'language.fr' },
-];
+
 onMounted(() => {
   weatherStore.connect();
 });
@@ -23,18 +18,7 @@ onUnmounted(() => {
 
 <template>
   <div class="app-container">
-    <header class="app-header">
-      <div class="header-content">
-        <h1>{{ t('app.title') }}</h1>
-        <div class="lang-switcher glass-item">
-          <select v-model="locale" class="lang-select">
-            <option v-for="lang in languages" :key="lang.code" :value="lang.code">
-              {{ t(lang.key) }}
-            </option>
-          </select>
-        </div>
-      </div>
-    </header>
+    <AppHeader />
     <main>
       <WeatherWidget />
       <ForecastList />
