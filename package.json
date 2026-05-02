@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run backend-select && vite --host",
+    "backend-select": "node scripts/switch-backend.mjs",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
