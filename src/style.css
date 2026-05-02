@@ -2,7 +2,7 @@
 
 :root {
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(112, 38, 38, 0.2);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
@@ -24,6 +24,11 @@
   animation: gradientBG 15s ease infinite;
   color: var(--text-primary);
   overflow-x: hidden;
+}
+
+.weather-widget-root {
+  font-family: "Outfit", sans-serif;
+  color: var(--text-primary);
 }
 
 @keyframes gradientBG {

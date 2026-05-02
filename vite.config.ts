@@ -1,18 +1,18 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vitest/config'
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
-import { resolve } from 'path'
+import { defineConfig } from "vitest/config";
+import vue from "@vitejs/plugin-vue";
+import dts from "vite-plugin-dts";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), dts({ insertTypesEntry: true })],
   build: {
     lib: {
-      entry: resolve(__dirname, 'widget-entry.ts'),
-      name: 'WeatherWidget',
-      fileName: 'weather-widget',
-      formats: ['es', 'umd']
+      entry: resolve(__dirname, "widget-entry.ts"),
+      name: "WeatherWidget",
+      fileName: "weather-widget",
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       // By NOT externalizing 'vue' or 'pinia', they will be bundled inside the widget.
@@ -20,11 +20,11 @@ export default defineConfig({
       // If publishing to NPM for other Vue apps, you might want to add: external: ['vue']
       external: [],
       output: {
-        globals: {}
-      }
-    }
+        globals: {},
+      },
+    },
   },
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
   },
-})
+});
