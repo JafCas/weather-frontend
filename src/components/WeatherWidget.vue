@@ -41,8 +41,16 @@ const IconComponent = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 320px;
-  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .weather-widget {
+    margin-bottom: 0;
+    min-width: 320px;
+  }
 }
 
 .widget-header {
@@ -54,8 +62,14 @@ const IconComponent = computed(() => {
 }
 
 .widget-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .widget-header h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .status-indicator {
@@ -76,9 +90,15 @@ const IconComponent = computed(() => {
 }
 
 .temperature {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 300;
   line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .temperature {
+    font-size: 5rem;
+  }
 }
 
 .weather-icon {

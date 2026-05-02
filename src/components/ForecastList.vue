@@ -32,6 +32,9 @@ const getIcon = (code: number) => {
 
 <style scoped>
 .forecast-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   max-width: 600px;
 }
