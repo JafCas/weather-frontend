@@ -2,9 +2,11 @@
 import { computed } from 'vue';
 import { useWeatherStore } from '../stores/weather';
 import { getWeatherIcon, formatTime } from '../utils/weather';
+import { useI18n } from 'vue-i18n';
 import * as icons from 'lucide-vue-next';
 
 const weatherStore = useWeatherStore();
+const { t } = useI18n();
 
 const forecast = computed(() => weatherStore.weather?.forecast || []);
 
@@ -16,7 +18,7 @@ const getIcon = (code: number) => {
 
 <template>
   <div class="forecast-list glass-panel">
-    <h3>8-Hour Forecast</h3>
+    <h3>{{ t('forecast.title') }}</h3>
     <div class="forecast-container" v-if="forecast.length > 0">
       <div v-for="item in forecast" :key="item.time" class="forecast-item glass-item">
         <span class="time">{{ formatTime(item.time) }}</span>
@@ -25,13 +27,16 @@ const getIcon = (code: number) => {
       </div>
     </div>
     <div v-else class="forecast-loading">
-      Waiting for data...
+      {{ t('forecast.waiting') }}
     </div>
   </div>
 </template>
 
 <style scoped>
 .forecast-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   max-width: 600px;
 }
