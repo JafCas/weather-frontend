@@ -6,7 +6,7 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts({ insertTypesEntry: true })],
+  plugins: [vue(), dts({ insertTypesEntry: true, tsconfigPath: './tsconfig.app.json' })],
   build: {
     lib: {
       entry: resolve(__dirname, "widget-entry.ts"),
