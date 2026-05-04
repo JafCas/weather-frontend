@@ -2,24 +2,26 @@
   "name": "jca-weather-frontend",
   "version": "1.0.2",
   "type": "module",
-  "main": "./dist/weather-widget.umd.cjs",
-  "module": "./dist/weather-widget.js",
-  "types": "./dist/weather-widget.d.ts",
+  "main": "./dist-lib/weather-widget.umd.cjs",
+  "module": "./dist-lib/weather-widget.js",
+  "types": "./dist-lib/weather-widget.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/weather-widget.js",
-      "require": "./dist/weather-widget.umd.cjs"
+      "import": "./dist-lib/weather-widget.js",
+      "require": "./dist-lib/weather-widget.umd.cjs"
     },
-    "./style.css": "./dist/weather-widget.css"
+    "./style.css": "./dist-lib/weather-widget.css"
   },
   "files": [
-    "dist"
+    "dist-lib"
   ],
   "scripts": {
     "dev": "npm run backend-select && vite --host",
     "backend-select": "node scripts/switch-backend.mjs",
     "build": "vue-tsc -b && vite build",
+    "build:lib": "vue-tsc -b && LIB_BUILD=true vite build",
     "re-build": "rm -rf node_modules dist && npm install && npm run build",
+    "re-build:lib": "rm -rf node_modules dist && npm install && npm run build:lib",
     "preview": "vite preview"
   },
   "dependencies": {
