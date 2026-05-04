@@ -1,6 +1,6 @@
 {
   "name": "jca-weather-frontend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist-lib/weather-widget.umd.cjs",
   "module": "./dist-lib/weather-widget.js",
