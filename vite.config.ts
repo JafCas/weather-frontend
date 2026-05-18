@@ -32,9 +32,13 @@ export default defineConfig(({}) => {
           rollupOptions: {
             // By NOT externalizing 'vue' or 'pinia', they will be bundled inside the widget.
             // This is ideal for distributing via a CDN as a truly standalone script.
-            external: ["vue", "react"],
+            external: ["vue", "react", "pinia", "vue-i18n"],
             output: {
-              globals: {},
+              globals: {
+                vue: "Vue",
+                pinia: "Pinia",
+                "vue-i18n": "VueI18n",
+              },
             },
           },
           outDir: "dist-lib",
